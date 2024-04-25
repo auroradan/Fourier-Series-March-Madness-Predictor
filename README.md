@@ -6,3 +6,6 @@ To approach this problem, we are going to normalize data on offensive and defens
 ## Challenges, Risks, and Fallback
 Some challenges that we envision are learning the 2-dimensional Fourier series, getting the data from the website into a usable format, and developing that performs the Fourier series. To mitigate challenges with the 2-dimensional Fourier series, we will ask Professor Sidiropoulos and TA’s who have used the 2-dimensional Fourier series before. A mitigation for obtaining data from the website is to manually create Excel spreadsheets of the data from each year. A fallback idea for a project would be to predict the final standing of a Premier League season using data on  net money spent by a club and average squad ages. This would utilize similar principles to our current idea, but would allow usage of more accessible data. This mitigates risk by making data easier to iterate through and providing a better output probability.
 
+## Results
+It is important to know that a greater offensive efficiency rating (points scored per 100 possessions) and a lower defensive efficiency (points allows per 100 possessions) is ideal.
+![image](https://github.com/auroradan/Fourier-Series-March-Madness-Predictor/assets/103843222/fc2f0da7-4b71-4360-9d17-120d942cdea7)
