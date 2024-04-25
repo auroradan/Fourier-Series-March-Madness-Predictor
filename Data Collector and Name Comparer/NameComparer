@@ -1,0 +1,40 @@
+import pandas as pd
+
+# Define file paths
+file_path1 = 'March_Madness_Win_Data.xlsx'
+file_path2 = 'March Madness Basketball Data.xlsx'
+
+# Define the range of years
+# years = range(2011, 2022)
+years = [2023]
+# Function to read names from a given sheet without headers
+def read_names(file_path, sheet_name):
+    try:
+        data = pd.read_excel(file_path, sheet_name=str(sheet_name), header=None)
+        return set(data[0].dropna())  # Reads the first column and removes NaN values
+    except Exception as e:
+        print(f"Error reading {sheet_name} from {file_path}: {e}")
+        return set()
+
+# Main function to compare names across files
+def compare_names():
+    for year in years:
+        names1 = read_names(file_path1, year)
+        names2 = read_names(file_path2, year)
+        
+        # Find differences
+        only_in_file1 = names1 - names2
+        only_in_file2 = names2 - names1
+        
+        # Print discrepancies
+        if only_in_file1 or only_in_file2:
+            print(f"Discrepancies for the year {year}:")
+            if only_in_file1:
+                print(f"Names only in first file: {only_in_file1}")
+            if only_in_file2:
+                print(f"Names only in second file: {only_in_file2}")
+        else:
+            print(f"No discrepancies for the year {year}.")
+
+# Run the comparison function
+compare_names()
